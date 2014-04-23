@@ -45,6 +45,11 @@ li {margin: 0 0 0.4em 0;}
 
 em {font-style: normal; font-weight: bold;}
 
+div.tooltipHeader {position: relative;}
+div.tooltipHeader > div.tooltipBody {display: none;}
+div.tooltipHeader:hover > div.tooltipBody {position: absolute; display: block;
+line-height: 1em; color: white; background: rgba(0,0,0,0.6); padding: 4px 8px 8px 8px;}
+
 a:link,
 a:visited {color: black; background: rgb(248, 248, 248);}
 a:hover,
@@ -76,8 +81,22 @@ p#sig {font-size: 16px; line-height: 16px; position: absolute; top: 0; right: 10
 <p>Snowy is a Windows desktop app to copy images from FlashAir by a wireless connection. You can copy images in bulk or select from thumbnails one by one. Also you can make this app check new images automatically at a regular interval.</p>
 
 <div style="text-align: center;">
-<img src="images/snowy-en-01.png" style="width:780px; height:640px; margin:14px 0 0 0;" alt="Screenshot">
-<img src="images/snowy-en-02.png" style="width:760px; height:720px; margin:14px 0 0 0;" alt="Screenshot">
+<img src="images/snowy-en-01.png" style="width:780px; height: 640px; margin-top: 14px; vertical-align: bottom;" alt="Screenshot"/>
+
+<div class="tooltipHeader" style="font-size: 0.8em; width: 370px; margin: 0 auto;">
+<p style="color: darkgray; margin: 0;">About Figures</p>
+<div class="tooltipBody" style="text-align: left; width: 370px;">
+<ul>
+	<li>TAIL-SLAP : 月読鎖々美 いなばのしろうさぎ Ver</li>
+	<li>はこむす : 僕の前に人は居ない僕の後ろに君は居る (常月まとい)</li>
+	<li>林檎連盟 : 初音ミク サマーメモリー</li>
+	<li>ReplyFrom : トラコッティと虎神さま</li>
+	<li>柳生敏之 : 初音ミク</li>
+</ul>
+</div>
+</div>
+
+<img src="images/snowy-en-02.png" style="width: 760px; height: 720px; margin-top: 6px; vertical-align: bottom;" alt="Screenshot"/>
 </div>
 
 <h2>Requirements</h2>

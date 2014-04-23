@@ -45,6 +45,11 @@ li {margin: 0 0 0.4em 0}
 
 em {font-style: normal; font-weight: bold;}
 
+div.tooltipHeader {position: relative;}
+div.tooltipHeader > div.tooltipBody {display: none;}
+div.tooltipHeader:hover > div.tooltipBody {position: absolute; display: block;
+line-height: 1em; color: white; background: rgba(0,0,0,0.6); padding: 4px 8px 8px 8px;}
+
 a:link,
 a:visited {color: black; background: rgb(248, 248, 248);}
 a:hover,
@@ -76,8 +81,22 @@ p#sig {font-size: 16px; line-height: 16px; position: absolute; top: 0; right: 10
 <p>SnowyはFlashAirから無線接続で画像をコピーするためのWindowsデスクトップアプリです。画像をまとめてコピーしたり、サムネイルから一つずつ選んだりできます。新しい画像を一定間隔で自動チェックさせることもできます。</p>
 
 <div style="text-align: center;">
-<img src="images/snowy-jp-01.png" style="width:780px; height:640px; margin:14px 0 0 0;" alt="Screenshot">
-<img src="images/snowy-jp-02.png" style="width:760px; height:720px; margin:14px 0 0 0;" alt="Screenshot">
+<img src="images/snowy-jp-01.png" style="width: 780px; height: 640px; margin-top: 14px; vertical-align: bottom;" alt="Screenshot"/>
+
+<div class="tooltipHeader" style="font-size: 0.8em; width: 340px; margin: 0 auto;">
+<p style="color: darkgray; margin: 0;">フィギュアについて</p>
+<div class="tooltipBody" style="text-align: left; width: 340px;">
+<ul>
+	<li>GOMUO(2) : 食蜂操祈</li>
+	<li>あおしんごう : 黒蜜ねね</li>
+	<li>タマツキアソビ : ブラック羽川 猫物語『白』</li>
+	<li>R.GLATT-CC : アスナ (ティターニア Ver)</li>
+	<li>とらbrindle : ハートキャッチプリキュア！無限シルエット</li>
+</ul>
+</div>
+</div>
+
+<img src="images/snowy-jp-02.png" style="width: 760px; height: 720px; margin-top: 6px; vertical-align: bottom;" alt="Screenshot"/>
 </div>
 
 <h2>動作条件</h2>
