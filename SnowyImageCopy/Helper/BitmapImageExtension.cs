@@ -8,6 +8,9 @@ using System.Windows.Media.Imaging;
 
 namespace SnowyImageCopy.Helper
 {
+	/// <summary>
+	/// Extenstion method for <see cref="System.Windows.Media.Imaging.BitmapImage"/>
+	/// </summary>
 	public static class BitmapImageExtension
 	{
 		/// <summary>

@@ -35,9 +35,9 @@ namespace SnowyImageCopy.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Snowy.lnk")]
-        public string ShortcutFile {
+        public string ShortcutFileName {
             get {
-                return ((string)(this["ShortcutFile"]));
+                return ((string)(this["ShortcutFileName"]));
             }
         }
         

@@ -4,17 +4,18 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Threading;
 
+using DesktopToast;
 using SnowyImageCopy.Common;
 using SnowyImageCopy.Helper;
 using SnowyImageCopy.Models.Exceptions;
 using SnowyImageCopy.Models.Network;
-using SnowyImageCopy.Models.Toast;
 using SnowyImageCopy.Properties;
 using SnowyImageCopy.ViewModels;
 
@@ -986,10 +987,17 @@ namespace SnowyImageCopy.Models
 			if ((countFileCopied <= 0) || (DateTime.Now - CopyStartTime < toastThresholdLength))
 				return;
 
-			var result = await ToastManager.ShowAsync(
-				Resources.ToastHeadline_CopyCompleted,
-				Resources.ToastBody_CopyCompleted1st,
-				String.Format(Resources.ToastBody_CopyCompleted2nd, countFileCopied, (int)(DateTime.Now - CopyStartTime).TotalSeconds));
+			var request = new ToastRequest
+			{
+				ToastHeadline = Resources.ToastHeadline_CopyCompleted,
+				ToastBody = Resources.ToastBody_CopyCompleted,
+				ToastBodyExtra = String.Format(Resources.ToastBodyExtra_CopyCompleted, countFileCopied, (int)(DateTime.Now - CopyStartTime).TotalSeconds),
+				ShortcutFileName = Properties.Settings.Default.ShortcutFileName,
+				ShortcutTargetFilePath = Assembly.GetExecutingAssembly().Location,
+				AppId = Properties.Settings.Default.AppId
+			};
+
+			var result = await ToastManager.ShowAsync(request);
 
 			if (result == ToastResult.Activated)
 				IsWindowActivateRequested = true; // Activating Window is requested.
@@ -1049,7 +1057,7 @@ namespace SnowyImageCopy.Models
 		{
 			var fileName = item.FileName;
 			if (String.IsNullOrWhiteSpace((fileName)))
-				throw new InvalidOperationException("FileName property is empty.");					
+				throw new InvalidOperationException("FileName property is empty.");
 
 			if (Settings.Current.MakesFileExtensionLowerCase)
 			{

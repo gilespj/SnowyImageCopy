@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace SnowyImageCopy.Helper
 {
+	/// <summary>
+	/// Additional method for <see cref="System.IO.File"/>
+	/// </summary>
 	public static class FileAddition
 	{
 		private const int defaultCopyBufferSize = 81920; // 80KiB is actual default buffer size in System.IO.File class.

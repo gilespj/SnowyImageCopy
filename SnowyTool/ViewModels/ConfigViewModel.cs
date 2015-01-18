@@ -391,10 +391,10 @@ namespace SnowyTool.ViewModels
 			get
 			{
 				return ((APPMODE_IMPORT != APPMODE) ||
-					!IsBothNullOrEmptyOrEquals(APPSSID_IMPORT, APPSSID) ||
-					!IsBothNullOrEmptyOrEquals(APPNETWORKKEY_IMPORT, APPNETWORKKEY) ||
-					!IsBothNullOrEmptyOrEquals(BRGSSID_IMPORT, BRGSSID) ||
-					!IsBothNullOrEmptyOrEquals(BRGNETWORKKEY_IMPORT, BRGNETWORKKEY) ||
+					!EqualsOrIsNullOrEmpty(APPSSID_IMPORT, APPSSID) ||
+					!EqualsOrIsNullOrEmpty(APPNETWORKKEY_IMPORT, APPNETWORKKEY) ||
+					!EqualsOrIsNullOrEmpty(BRGSSID_IMPORT, BRGSSID) ||
+					!EqualsOrIsNullOrEmpty(BRGNETWORKKEY_IMPORT, BRGNETWORKKEY) ||
 					(UPLOAD_IMPORT != UPLOAD));
 			}
 		}
@@ -507,7 +507,7 @@ namespace SnowyTool.ViewModels
 
 		internal void Import(string configContent)
 		{
-			var contents = TextParse.GetContent(configContent, separator);
+			var contents = StringDictionary.Parse(configContent, separator);
 
 			isImporting = true;
 
@@ -648,11 +648,11 @@ namespace SnowyTool.ViewModels
 				: source.Substring(0, maxLength);
 		}
 
-		private static bool IsBothNullOrEmptyOrEquals(string a, string b, StringComparison comparisonType = StringComparison.Ordinal)
+		private static bool EqualsOrIsNullOrEmpty(string a, string b, StringComparison comparisonType = StringComparison.Ordinal)
 		{
 			return String.Equals(
-				a == String.Empty ? null : a,
-				b == String.Empty ? null : b,
+				(a == String.Empty) ? null : a,
+				(b == String.Empty) ? null : b,
 				comparisonType);
 		}
 
