@@ -16,7 +16,7 @@ namespace SnowyTool.Helper
         /// </summary>
         /// <param name="source">Source String</param>
         /// <param name="separator">Separator Char</param>
-        /// <returns>Dictionary{string, string}</returns>
+        /// <returns>Dictionary of Key String and value String</returns>
         public static Dictionary<string, string> Parse(string source, char separator)
         {
             if (String.IsNullOrWhiteSpace(source))
