@@ -14,7 +14,7 @@ namespace SnowyImageCopy.Models
         GetFileList,
 
         /// <summary>
-        /// Get number of files in a specified directory in FlashAir card.
+        /// Get the number of files in a specified directory in FlashAir card.
         /// </summary>
         GetFileNum,
 

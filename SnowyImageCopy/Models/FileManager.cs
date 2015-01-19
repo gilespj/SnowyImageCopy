@@ -160,7 +160,7 @@ namespace SnowyImageCopy.Models
 		}
 
 		/// <summary>
-		/// Get number of files in a specified directory in FlashAir card.
+		/// Get the number of files in a specified directory in FlashAir card.
 		/// </summary>
 		/// <param name="remoteDirectoryPath">Remote directory path</param>
 		/// <param name="token">CancellationToken</param>
@@ -618,9 +618,9 @@ namespace SnowyImageCopy.Models
 										var bufferTotal = new byte[size];
 
 										const double stepUint = 524288D; // 512KiB
-										double stepTotal = Math.Ceiling(size / stepUint); // Number of steps to report during downloading
+										double stepTotal = Math.Ceiling(size / stepUint); // The number of steps to report during downloading
 										if (stepTotal < 6)
-											stepTotal = 6; // Minimum number of steps
+											stepTotal = 6; // The minimum number of steps
 
 										double stepCurrent = 1D;
 										var startTime = DateTime.Now;
