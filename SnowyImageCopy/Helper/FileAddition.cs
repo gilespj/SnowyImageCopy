@@ -37,12 +37,12 @@ namespace SnowyImageCopy.Helper
 		/// <summary>
 		/// Read all bytes from a specified file asynchronously.
 		/// </summary>
-		/// <param name="filelPath">Source file path</param>
+		/// <param name="filePath">Source file path</param>
 		/// <param name="bufferSize">Buffer size</param>
 		/// <param name="token">CancellationToken</param>
-		public static async Task<byte[]> ReadAllBytesAsync(string filelPath, int bufferSize, CancellationToken token)
+		public static async Task<byte[]> ReadAllBytesAsync(string filePath, int bufferSize, CancellationToken token)
 		{
-			using (var fs = new FileStream(filelPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+			using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
 			using (var ms = new MemoryStream())
 			{
 				await fs.CopyToAsync(ms, bufferSize, token);
